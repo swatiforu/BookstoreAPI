@@ -1,16 +1,17 @@
 # BookstoreAPI
 A learning project for FastAPI
 
-| Endpoint                | Method | Description                                              |
-|-------------------------|--------|----------------------------------------------------------|
-| `/books`                | GET    | Retrieves a list of all books available in the bookstore.|
-| `/books/{bookId}`       | GET    | Retrieves detailed information about a specific book.    |
-| `/books`                | POST   | Adds a new book to the bookstore inventory.              |
-| `/books/{bookId}`       | PUT    | Updates information for an existing book.                |
-| `/books/{bookId}`       | DELETE | Removes a book from the bookstore inventory.             |
-| `/books/search`         | GET    | Searches the inventory for books by title, author, or ISBN.|
-| `/users`                | POST   | Registers a new user in the system.                      |
-| `/users/login`          | POST   | Authenticates a user and returns a token.                |
-| `/orders`               | POST   | Places a new order for books.                            |
-| `/orders/{orderId}`     | GET    | Retrieves details of a specific order.                   |
-| `/users/{userId}/orders`| GET    | Retrieves a list of orders placed by a specific user.    |
+| Method | Route                      | Functionality                      | Access    |
+|--------|----------------------------|------------------------------------|-----------|
+| GET    | `/books`                   | Retrieves a list of all books      | All users |
+| GET    | `/books/{bookId}`          | Retrieves details of a specific book | All users |
+| POST   | `/books`                   | Adds a new book to the inventory   | Admin     |
+| PUT    | `/books/{bookId}`          | Updates a specific book            | Admin     |
+| DELETE | `/books/{bookId}`          | Deletes a specific book            | Admin     |
+| GET    | `/books/search`            | Searches books by criteria         | All users |
+| POST   | `/users`                   | Registers a new user               | All users |
+| POST   | `/users/login`             | User login                         | All users |
+| POST   | `/orders`                  | Places a book order                | All users |
+| GET    | `/orders/{orderId}`        | Retrieves a specific order         | All users |
+| GET    | `/users/{userId}/orders`   | Retrieves all orders of a user     | User      |
+
